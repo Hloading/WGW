@@ -8,187 +8,136 @@
     <style>
         :root {
             --gold: #D4AF37;
-            --soft-gold: #f3e5ab;
             --black: #0a0a0a;
             --white: #ffffff;
             --gray: #1a1a1a;
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: 'Poppins', sans-serif;
             background-color: var(--black);
             color: var(--white);
-            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        /* Nav */
         nav {
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(10, 10, 10, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .nav-logo {
-            height: 50px;
-        }
+        .nav-logo { height: 40px; }
 
-        .cta-button {
-            background-color: var(--gold);
-            color: var(--black);
-            padding: 12px 25px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            transition: 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            background-color: var(--soft-gold);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
+            padding: 100px 5%;
             text-align: center;
-            padding: 100px 10%;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('your-background-image.jpg');
-            background-size: cover;
+            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
         }
 
-        .hero img {
-            max-width: 300px;
-            margin-bottom: 30px;
+        .main-logo {
+            max-width: 250px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 0px 15px rgba(212, 175, 55, 0.3));
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             color: var(--gold);
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 80px 10%;
-            background-color: var(--gray);
-        }
-
-        .feature-card {
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: 0.3s;
-        }
-
-        .feature-card:hover {
-            border-color: var(--gold);
-        }
-
-        .feature-card h3 {
-            color: var(--gold);
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Truck Showcase */
-        .truck-section {
-            padding: 80px 10%;
+        /* Truck Display */
+        .truck-box {
+            padding: 60px 5%;
             text-align: center;
         }
 
-        .truck-container {
-            border: 2px solid var(--gold);
-            padding: 10px;
-            display: inline-block;
-            border-radius: 8px;
+        .truck-img {
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            padding: 80px 5%;
+            background: var(--gray);
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 15px;
             background: #000;
-        }
-
-        .truck-image {
-            max-width: 100%;
-            height: auto;
+            border: 1px solid #333;
+            color: white;
             border-radius: 4px;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--white);
+        input:focus { border-color: var(--gold); outline: none; }
+
+        .btn {
+            background: var(--gold);
+            color: black;
+            padding: 15px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        .section-title span {
-            color: var(--gold);
-        }
-
-        /* Footer */
-        footer {
-            padding: 50px 10%;
-            text-align: center;
-            border-top: 1px solid var(--gray);
-        }
-
-        .footer-logo {
-            height: 60px;
-            margin-bottom: 20px;
-            filter: brightness(1.2);
-        }
+        .btn:hover { background: #f3e5ab; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-text" style="font-family: 'Playfair Display'; color: var(--gold); font-size: 1.5rem;">WGW</div>
-        <a href="#contact" class="cta-button">Get a Quote</a>
+        <img src="logo.png" alt="WGW" class="nav-logo">
+        <a href="#contact" class="btn" style="padding: 10px 20px;">Contact Us</a>
     </nav>
 
-    <section class="hero">
-        <img src="Outlook-dpqg2on4.png" alt="WGW Logo">
-        <h1>Premium Service. Pristine Communities.</h1>
-        <p class="tagline">The Gold Standard in Valet Trash</p>
+    <header class="hero">
+        <img src="logo.png" alt="White Glove Waste Logo" class="main-logo">
+        <h1>Luxury Valet Trash Collection</h1>
+        <p style="letter-spacing: 2px;">PREMIUM SERVICE | PRISTINE COMMUNITIES</p>
+    </header>
+
+    <section class="truck-box">
+        <h2 style="font-family: 'Playfair Display'; margin-bottom: 30px;">Our Professional Fleet</h2>
+        <img src="truck.jpg" alt="Our Service Truck" class="truck-img">
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>Doorstep Pickup</h3>
-            <p>Convenient, scheduled waste removal for luxury multi-family residents.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Valet Excellence</h3>
-            <p>Uniformed professionals providing white-glove attention to every unit.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Reliable & Consistent</h3>
-            <p>State-of-the-art tracking ensures no doorstep is ever missed.</p>
-        </div>
+    <section id="contact" class="contact-section">
+        <h2 style="font-family: 'Playfair Display'; color: var(--gold);">Inquire for Your Property</h2>
+        <form>
+            <input type="text" placeholder="Property Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea rows="5" placeholder="Tell us about your community..."></textarea>
+            <button type="submit" class="btn">Request a Proposal</button>
+        </form>
     </section>
 
-    <section class="truck-section">
-        <h2 class="section-title">Professional <span>Equipment</span></h2>
-        <div class="truck-container">
-            <img src="ChatGPT Image Apr 28, 2026, 01_27_28 PM.jpg" alt="White Glove Waste Service Truck" class="truck-image">
-        </div>
-        <p style="margin-top: 20px; color: #888;">Our branded fleet is clean, quiet, and efficient.</p>
-    </section>
-
-    <footer>
-        <img src="Outlook-dpqg2on4.png" alt="WGW Logo" class="footer-logo">
-        <p>&copy; 2026 White Glove Waste Valet Service. All Rights Reserved.</p>
+    <footer style="padding: 40px; text-align: center; font-size: 0.8rem; color: #555;">
+        &copy; 2026 WHITE GLOVE WASTE VALET SERVICE
     </footer>
 
 </body>
