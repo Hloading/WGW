@@ -1,480 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>White Glove Waste | Luxury Valet Trash Service</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #050505;
-      color: white;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 22px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #050505;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo-area img {
-      width: 68px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .brand {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #d4af37;
-    }
-
-    .brand span {
-      color: white;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 28px;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    nav a:hover {
-      color: #d4af37;
-    }
-
-    .hero {
-      min-height: 90vh;
-      padding: 90px 8%;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 50px;
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 35%),
-        linear-gradient(135deg, #050505 0%, #111 55%, #050505 100%);
-    }
-
-    .hero h1 {
-      font-size: 64px;
-      line-height: 1.05;
-      margin-bottom: 24px;
-    }
-
-    .gold {
-      color: #d4af37;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #d8d8d8;
-      max-width: 620px;
-      margin-bottom: 34px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 15px 26px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .btn.gold-btn {
-      background: #d4af37;
-      color: #050505;
-    }
-
-    .btn.outline-btn {
-      border: 1px solid #d4af37;
-      color: white;
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 28px;
-      padding: 42px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.45);
-    }
-
-    .hero-card img {
-      width: 130px;
-      display: block;
-      margin: 0 auto 28px;
-    }
-
-    .hero-card h3 {
-      color: #d4af37;
-      font-size: 28px;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .hero-card p {
-      font-size: 16px;
-      text-align: center;
-      margin-bottom: 0;
-    }
-
-    section {
-      padding: 90px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title h2 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #cfcfcf;
-      max-width: 720px;
-      margin: auto;
-      font-size: 17px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .card {
-      background: #0d0d0d;
-      border: 1px solid rgba(212,175,55,0.25);
-      padding: 34px;
-      border-radius: 24px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #d4af37;
-    }
-
-    .card h3 {
-      color: #d4af37;
-      margin-bottom: 14px;
-      font-size: 23px;
-    }
-
-    .card p {
-      color: #d8d8d8;
-    }
-
-    .apartments {
-      background: #090909;
-      border-top: 1px solid rgba(212,175,55,0.18);
-      border-bottom: 1px solid rgba(212,175,55,0.18);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .split h2 {
-      font-size: 42px;
-      margin-bottom: 22px;
-    }
-
-    .split p {
-      color: #d8d8d8;
-      margin-bottom: 18px;
-      font-size: 17px;
-    }
-
-    .highlight-box {
-      border: 1px solid #d4af37;
-      border-radius: 26px;
-      padding: 38px;
-      background: linear-gradient(145deg, rgba(212,175,55,0.13), rgba(255,255,255,0.03));
-    }
-
-    .highlight-box h3 {
-      color: #d4af37;
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .list {
-      margin-top: 20px;
-    }
-
-    .list div {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: #eeeeee;
-    }
-
-    .contact {
-      text-align: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.95)),
-        radial-gradient(circle, rgba(212,175,55,0.2), transparent 40%);
-    }
-
-    .contact h2 {
-      font-size: 44px;
-      margin-bottom: 16px;
-    }
-
-    .contact p {
-      color: #d8d8d8;
-      margin-bottom: 30px;
-      font-size: 18px;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
-
-    .contact-box {
-      border: 1px solid rgba(212,175,55,0.35);
-      padding: 20px 30px;
-      border-radius: 18px;
-      color: white;
-      background: #0c0c0c;
-    }
-
-    .contact-box strong {
-      color: #d4af37;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    footer {
-      padding: 28px 8%;
-      text-align: center;
-      color: #aaa;
-      border-top: 1px solid rgba(212,175,55,0.25);
-      background: #050505;
-    }
-
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      nav a {
-        margin: 0 10px;
-      }
-
-      .hero,
-      .split {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Glove Waste | Elite Valet Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #0f0f0f; color: #ffffff; }
+        .serif { font-family: 'Cinzel', serif; }
+        .gold-text { color: #d4af37; }
+        .gold-border { border-color: #d4af37; }
+        .gold-bg { background-color: #d4af37; }
+        .gradient-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%); }
+    </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo-area">
-      <img src="wgw-logo.png" alt="White Glove Waste Logo">
-      <div class="brand">White <span>Glove</span> Waste</div>
-    </div>
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#difference">What Sets Us Apart</a>
-      <a href="#partners">Partners</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div>
-      <h1>Luxury Valet Trash Service With a <span class="gold">White Glove Standard</span></h1>
-      <p>
-        White Glove Waste provides a clean, reliable, and elevated waste collection experience
-        designed for high-end apartments, luxury communities, businesses, and premium vendor partnerships.
-      </p>
-
-      <div class="buttons">
-        <a href="#contact" class="btn gold-btn">Partner With Us</a>
-        <a href="#difference" class="btn outline-btn">What Sets Us Apart</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <img src="wgw-logo.png" alt="White Glove Waste Logo">
-      <h3>Pristine. Reliable. Professional.</h3>
-      <p>
-        Every pickup is handled with care, consistency, and a luxury-service mindset.
-      </p>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="section-title">
-      <h2>Designed for Premium Properties</h2>
-      <p>
-        We help properties deliver a cleaner, more convenient resident experience while maintaining
-        the polished image expected from luxury communities and professional businesses.
-      </p>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Luxury Apartment Communities</h3>
-        <p>
-          Built for high-end apartments that want a clean, dependable, and professional doorstep trash solution.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Business & Vendor Options</h3>
-        <p>
-          We are open to working with apartments, businesses, property managers, and vendor partnership opportunities.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>White Glove Service</h3>
-        <p>
-          Our name reflects our standard: everything is handled on a pristine level with pride, care, and attention to detail.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="apartments" id="difference">
-    <div class="split">
-      <div>
-        <h2>What Sets Us Apart</h2>
-        <p>
-          White Glove Waste uses a real-time service app that allows us to update and alert users
-          when service is coming and when trash has been picked up.
-        </p>
-        <p>
-          This gives residents and property teams better communication, stronger accountability,
-          and a smoother service experience from start to finish.
-        </p>
-      </div>
-
-      <div class="highlight-box">
-        <h3>Real-Time Service Updates</h3>
-        <p>
-          Our communication-focused service model keeps users informed before and after pickup.
-        </p>
-
-        <div class="list">
-          <div>Service arrival alerts</div>
-          <div>Pickup completion updates</div>
-          <div>Professional and consistent coverage</div>
-          <div>Pristine white-glove level service</div>
+    <nav class="flex justify-between items-center p-8 border-b border-gray-800 bg-black">
+        <div class="flex items-center gap-4">
+            <img src="logo.png" alt="WGW Logo" class="h-16 w-auto"> 
+            <span class="serif text-2xl tracking-widest hidden md:block">WGW</span>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="hidden md:flex gap-8 text-sm tracking-widest uppercase">
+            <a href="#services" class="hover:text-[#d4af37] transition">Services</a>
+            <a href="#technology" class="hover:text-[#d4af37] transition">Technology</a>
+            <a href="#contact" class="hover:text-[#d4af37] transition">Partner With Us</a>
+        </div>
+    </nav>
 
-  <section id="partners">
-    <div class="section-title">
-      <h2>Partnership Focus</h2>
-      <p>
-        We are looking to partner with high-end apartments, luxury residential communities,
-        businesses, and professional vendors that value clean presentation and reliable service.
-      </p>
-    </div>
+    <header class="relative h-[80vh] flex items-center justify-center text-center px-6">
+        <div class="z-10">
+            <h1 class="serif text-5xl md:text-7xl mb-4">Pristine Standards.<br><span class="gold-text">Unrivaled Service.</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg font-light tracking-wide">
+                Experience the gold standard of waste management. Designed exclusively for high-end residential communities and luxury estates.
+            </p>
+            <div class="mt-10">
+                <a href="#contact" class="px-8 py-4 bg-[#d4af37] text-black font-bold uppercase tracking-widest hover:bg-white transition">Inquire Now</a>
+            </div>
+        </div>
+    </header>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Property Managers</h3>
-        <p>
-          A premium valet trash option that helps strengthen the resident experience.
-        </p>
-      </div>
+    <section id="technology" class="py-24 bg-white text-black px-8">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="serif text-4xl mb-6">Real-Time Precision</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    What sets <strong>White Glove Waste</strong> apart is our commitment to transparency through technology. Our proprietary real-time app keeps residents and management informed with instant alerts.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <span class="gold-text">✦</span> Arrival notifications when service is imminent.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="gold-text">✦</span> Real-time confirmation once collection is complete.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="gold-text">✦</span> Direct communication channel for flawless execution.
+                    </li>
+                </ul>
+            </div>
+            <div class="border-8 border-black p-4 shadow-2xl">
+                <div class="bg-gray-100 h-96 flex items-center justify-center italic text-gray-400">
+                    [App Interface Visual]
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="card">
-        <h3>Luxury Communities</h3>
-        <p>
-          Service designed to match the image and expectations of upscale living spaces.
-        </p>
-      </div>
+    <section id="services" class="py-24 border-t border-gray-800 px-8 text-center">
+        <h2 class="serif text-4xl mb-12 gold-text">The White Glove Philosophy</h2>
+        <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <div class="p-8 border border-gray-700 hover:border-[#d4af37] transition">
+                <h3 class="serif text-xl mb-4">Luxury Residential</h3>
+                <p class="text-sm text-gray-400">Tailored valet trash services for high-end apartment complexes that demand excellence.</p>
+            </div>
+            <div class="p-8 border border-gray-700 hover:border-[#d4af37] transition">
+                <h3 class="serif text-xl mb-4">Corporate & Vendor</h3>
+                <p class="text-sm text-gray-400">Strategic partnerships with businesses and vendors to maintain pristine commercial environments.</p>
+            </div>
+            <div class="p-8 border border-gray-700 hover:border-[#d4af37] transition">
+                <h3 class="serif text-xl mb-4">Meticulous Care</h3>
+                <p class="text-sm text-gray-400">Every collection is performed to a pristine level, ensuring your property remains a sanctuary.</p>
+            </div>
+        </div>
+    </section>
 
-      <div class="card">
-        <h3>Business Partnerships</h3>
-        <p>
-          Flexible vendor opportunities for businesses needing clean, consistent waste support.
-        </p>
-      </div>
-    </div>
-  </section>
+    <footer id="contact" class="bg-black py-20 border-t-2 gold-border px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="serif text-3xl mb-8">Establish a Partnership</h2>
+            <p class="mb-12 text-gray-400">We are currently accepting inquiries for luxury apartment partnerships and vendor collaborations.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 text-lg">
+                <div>
+                    <p class="gold-text serif uppercase text-sm mb-2">Direct Line</p>
+                    <a href="tel:4707558508" class="hover:text-gray-400">470-755-8508</a>
+                </div>
+                <div>
+                    <p class="gold-text serif uppercase text-sm mb-2">Electronic Mail</p>
+                    <a href="mailto:whiteglovewaste@outlook.com" class="hover:text-gray-400">whiteglovewaste@outlook.com</a>
+                </div>
+            </div>
 
-  <section class="contact" id="contact">
-    <h2>Let’s Build a Cleaner Experience</h2>
-    <p>
-      Contact White Glove Waste today to discuss apartment, business, or vendor partnership opportunities.
-    </p>
-
-    <div class="contact-info">
-      <div class="contact-box">
-        <strong>Phone</strong>
-        470-755-8508
-      </div>
-
-      <div class="contact-box">
-        <strong>Email</strong>
-        whiteglovewaste@outlook.com
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 White Glove Waste. All Rights Reserved.
-  </footer>
+            <div class="mt-20 pt-8 border-t border-gray-900 text-xs text-gray-600 tracking-widest">
+                &copy; 2026 WHITE GLOVE WASTE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
