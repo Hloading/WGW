@@ -46,11 +46,6 @@
             letter-spacing: -0.015em;
         }
 
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 1.875rem);
-            letter-spacing: -0.01em;
-        }
-
         /* Navigation */
         nav {
             position: sticky;
@@ -87,474 +82,147 @@
             transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background-color: #dab86d;
-        }
-
         /* Hero Section */
         .hero {
             position: relative;
-            overflow: hidden;
             min-height: 600px;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/hero-luxury-building-m2Ur9q5Tiv8LHg8aLzaULT.webp');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/hero-luxury-building-m2Ur9q5Tiv8LHg8aLzaULT.webp');
             background-size: cover;
             background-position: center;
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 2;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 3;
             max-width: 1280px;
             margin: 0 auto;
             padding: 2rem;
             width: 100%;
-            max-width: 50%;
         }
 
-        .hero h1 {
-            color: white;
-            margin-bottom: 1rem;
+        .hero-text-box {
+            max-width: 600px;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-dark {
-            background-color: var(--background);
-        }
-
-        .section-muted {
-            background-color: rgba(45, 45, 45, 0.3);
-        }
-
-        .section-primary {
-            background-color: var(--primary);
-            color: #000000;
-        }
-
-        h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-primary h2 {
-            color: #000000;
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        /* Cards */
+        /* Sections & Layout */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1280px; margin: 0 auto; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        
+        .section-dark { background-color: var(--background); }
+        .section-muted { background-color: #0a0a0a; }
+        
         .card {
             background-color: var(--card-bg);
-            padding: 2rem;
+            padding: 2.5rem;
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .card h3 {
-            margin-bottom: 1rem;
-            color: var(--foreground);
-        }
-
-        .card p {
-            color: var(--muted-text);
-            line-height: 1.8;
-        }
-
-        /* Icons */
-        .icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        /* Lists */
-        ul {
-            list-style: none;
-        }
-
-        .check-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .check-list li {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-        }
-
-        .check-list li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        /* Images */
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         /* Form */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        form label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        form input,
-        form textarea {
+        form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+        input, textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.75rem;
+            background: #111;
             border: 1px solid var(--border-color);
-            background-color: var(--card-bg);
-            color: var(--foreground);
-            border-radius: 0.5rem;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
+            color: white;
+            border-radius: 4px;
         }
 
-        form input:focus,
-        form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
-        }
-
-        form button {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1rem;
-        }
-
-        /* Footer */
         footer {
-            background-color: rgba(45, 45, 45, 0.5);
+            padding: 4rem 2rem;
             border-top: 1px solid var(--border-color);
-            padding: 3rem 2rem;
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
+        .footer-logo { height: 50px; margin-bottom: 1rem; }
 
-        .footer-logo {
-            height: 48px;
-            width: auto;
-        }
-
-        footer p {
-            font-size: 0.875rem;
-            color: var(--muted-text);
-        }
-
-        /* Text Styles */
-        .text-center {
-            text-align: center;
-        }
-
-        .text-muted {
-            color: var(--muted-text);
-        }
-
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-16 { margin-bottom: 4rem; }
-
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-
-        .space-y-3 > * + * { margin-top: 0.75rem; }
-        .space-y-4 > * + * { margin-top: 1rem; }
-        .space-y-6 > * + * { margin-top: 1.5rem; }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .grid-2,
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-container {
-                padding: 1rem;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                padding: 1rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav>
         <div class="nav-container">
-            <div>
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/Outlook-dpqg2on4_14355a5b.png" alt="WGW Logo" class="nav-logo">
-            </div>
+            <a href="/">
+                <img src="logo.png" alt="White Glove Valet Waste Logo" class="nav-logo">
+            </a>
             <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Luxury Valet Trash Collection</h1>
-            <p>Premium doorstep waste management for discerning residential communities. Pristine grounds, zero hassle, professional excellence.</p>
-            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Request a Proposal</button>
+            <div class="hero-text-box">
+                <h1>Luxury Valet Trash Collection</h1>
+                <p style="font-size: 1.2rem; margin: 1.5rem 0;">Premium doorstep waste management for discerning residential communities. Pristine grounds, zero hassle, professional excellence.</p>
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Request a Proposal</button>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
     <section class="section-dark">
         <div class="container">
             <div class="grid-2">
                 <div>
-                    <h2>What We Offer</h2>
-                    <p class="text-muted mb-6">White Glove Valet Waste provides premium doorstep trash and recycling collection for luxury residential communities. Our professional service eliminates visible waste management from your property while maintaining the pristine aesthetic your residents expect.</p>
-                    <ul class="check-list">
-                        <li>Daily doorstep collection</li>
-                        <li>Customizable schedules</li>
-                        <li>Professional uniformed staff</li>
-                        <li>Recycling & composting programs</li>
+                    <h2 style="color: var(--primary);">What We Offer</h2>
+                    <p style="color: var(--muted-text); margin-bottom: 2rem;">White Glove Valet Waste provides premium doorstep trash and recycling collection for luxury residential communities.</p>
+                    <ul style="list-style: none; display: grid; gap: 1rem;">
+                        <li><span style="color: var(--primary);">✓</span> Daily doorstep collection</li>
+                        <li><span style="color: var(--primary);">✓</span> Professional uniformed staff</li>
+                        <li><span style="color: var(--primary);">✓</span> Recycling & composting programs</li>
                     </ul>
                 </div>
                 <div>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/valet-service-hero-iZimd3RrupMDvGmpRvBFsD.webp" alt="Professional valet service">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/valet-service-hero-iZimd3RrupMDvGmpRvBFsD.webp" alt="Professional valet service" style="width: 100%; border-radius: 8px;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Grid -->
-    <section class="section-muted">
+    <section class="section-muted" id="benefits">
         <div class="container">
-            <div class="text-center mb-16">
-                <h2>Why Choose White Glove?</h2>
-                <p class="text-muted">Our service delivers measurable benefits for property managers and residents alike.</p>
-            </div>
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary);">Why Choose White Glove?</h2>
             <div class="grid-3">
                 <div class="card">
                     <h3>Pristine Communities</h3>
-                    <p>Keep your property immaculate with daily doorstep collection. No visible trash bins, no clutter—just pristine grounds.</p>
+                    <p style="color: var(--muted-text);">Keep your property immaculate with daily doorstep collection. No visible bins, no clutter.</p>
                 </div>
                 <div class="card">
                     <h3>Convenient Scheduling</h3>
-                    <p>Flexible collection times tailored to your community's needs. Evening or morning service, we adapt to you.</p>
+                    <p style="color: var(--muted-text);">Flexible collection times tailored to your community's specific evening needs.</p>
                 </div>
                 <div class="card">
-                    <h3>Sustainability Focus</h3>
-                    <p>Comprehensive recycling and waste management programs that reduce environmental impact.</p>
-                </div>
-                <div class="card">
-                    <h3>Operational Efficiency</h3>
-                    <p>Reduce resident complaints and maintenance costs with our professional waste management system.</p>
-                </div>
-                <div class="card">
-                    <h3>Professional Team</h3>
-                    <p>Trained, uniformed staff who treat your community with respect and attention to detail.</p>
-                </div>
-                <div class="card">
-                    <h3>Guaranteed Reliability</h3>
-                    <p>Consistent, dependable service backed by our commitment to excellence.</p>
+                    <h3>Sustainability</h3>
+                    <p style="color: var(--muted-text);">Comprehensive recycling programs that reduce environmental impact and improve your ESG score.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Impact -->
-    <section class="section-dark">
-        <div class="container">
-            <div class="grid-2">
-                <div>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/community-clean-ZJq6dGHbGr7mTs2vi9ipHd.webp" alt="Clean community courtyard">
-                </div>
-                <div>
-                    <h2>Elevate Your Community</h2>
-                    <p class="text-muted mb-6">A pristine property is a competitive advantage. When residents never see trash bins, when grounds remain immaculate, and when waste management is invisible, your community stands out.</p>
-                    <div class="space-y-6">
-                        <div style="border-left: 2px solid var(--primary); padding-left: 1.5rem;">
-                            <h3>Door-to-Door Collection</h3>
-                            <p class="text-muted">Our professional team collects trash and recycling directly from your doorstep, eliminating the need for residents to manage bins.</p>
-                        </div>
-                        <div style="border-left: 2px solid var(--primary); padding-left: 1.5rem;">
-                            <h3>Flexible Service Options</h3>
-                            <p class="text-muted">Choose from 5-night weekly service, customized schedules, or specialized collection for specific community needs.</p>
-                        </div>
-                        <div style="border-left: 2px solid var(--primary); padding-left: 1.5rem;">
-                            <h3>Premium Equipment</h3>
-                            <p class="text-muted">High-quality, discreet collection containers that complement luxury residential aesthetics.</p>
-                        </div>
-                        <div style="border-left: 2px solid var(--primary); padding-left: 1.5rem;">
-                            <h3>Sustainability Programs</h3>
-                            <p class="text-muted">Comprehensive recycling and composting programs that align with modern environmental standards.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Details -->
-    <section class="section-muted">
-        <div class="container">
-            <h2 class="text-center mb-16">Service Details</h2>
-            <div class="grid-2">
-                <div>
-                    <h3>Collection Schedule</h3>
-                    <ul class="space-y-4 mt-4">
-                        <li><strong>Standard:</strong> 5 nights per week (Monday-Friday)</li>
-                        <li><strong>Flexible:</strong> Customized schedules available</li>
-                        <li><strong>Evening Service:</strong> Typically 6 PM - 10 PM</li>
-                        <li><strong>Holiday Coverage:</strong> Adjusted schedules for holidays</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>What's Included</h3>
-                    <ul class="check-list mt-4">
-                        <li>Doorstep trash collection</li>
-                        <li>Recycling collection</li>
-                        <li>Composting programs</li>
-                        <li>Professional uniformed staff</li>
-                        <li>Premium collection containers</li>
-                        <li>Dedicated account management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section-primary">
-        <div class="container text-center">
-            <h2>Ready to Transform Your Community?</h2>
-            <p class="mb-8">Let's discuss how White Glove Valet Waste can elevate your property management.</p>
-            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" style="background-color: white; color: var(--primary); max-width: 200px; margin: 0 auto;">Get Started</button>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="section-dark">
         <div class="container">
-            <h2 class="text-center mb-4">Inquire for Your Property</h2>
-            <p class="text-center text-muted mb-16">Tell us about your community and let's explore how we can serve you.</p>
-            <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry! We\'ll be in touch shortly.');">
-                <div>
-                    <label>Property Name</label>
-                    <input type="text" placeholder="e.g., Riverside Luxury Apartments" required>
-                </div>
-                <div>
-                    <label>Contact Email</label>
-                    <input type="email" placeholder="your@email.com" required>
-                </div>
-                <div>
-                    <label>Phone Number</label>
-                    <input type="tel" placeholder="(555) 123-4567">
-                </div>
-                <div>
-                    <label>Tell Us About Your Community</label>
-                    <textarea rows="5" placeholder="Number of units, current waste management situation, specific needs..." required></textarea>
-                </div>
+            <h2 style="text-align: center; color: var(--primary);">Inquire for Your Property</h2>
+            <p style="text-align: center; color: var(--muted-text); margin-bottom: 3rem;">Tell us about your community and let's explore how we can serve you.</p>
+            <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry!');">
+                <input type="text" placeholder="Property Name" required>
+                <input type="email" placeholder="Contact Email" required>
+                <textarea rows="5" placeholder="Number of units and specific needs..." required></textarea>
                 <button type="submit">Request a Proposal</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663327567201/7DnBcjRUYzje2ei7L64Wha/Outlook-dpqg2on4_14355a5b.png" alt="WGW Logo" class="footer-logo">
-            <p>© 2026 White Glove Valet Waste. Premium doorstep waste management for luxury communities.</p>
+        <div class="container">
+            <img src="logo.png" alt="WGW Logo" class="footer-logo">
+            <p style="color: var(--muted-text); font-size: 0.9rem;">© 2026 White Glove Valet Waste. All Rights Reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
